@@ -1,33 +1,59 @@
+{% load static %}
+
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title> {% block title %} Bienvenido a mi sitio {% endblock %} </title>
-</head>
-<body style="margin: 0; font-family: Arial, sans-serif; background: linear-gradient(to right, #4facfe, #1f618d ); color: white; text-align: center;">
-{% block header %}
-    <div style="padding: 80px 20px;">
-        <h1 style="font-size: 3em; margin-bottom: 20px;">¡Bienvenido a Mi Sitio Web!</h1>
-        <p style="font-size: 1.3em;">Esta es la página de inicio de nuestro proyecto con Django.</p>
-        
-    </div>
-{% endblock %}
-
-
-
-{% block content %}
-    <div style="padding: 80px 20px;">
-        <h1 style="font-size: 3em; margin-bottom: 20px;">Segunda parte</h1>
-        <p style="font-size: 1.3em;">Esta es la página de inicio de nuestro proyecto con Django.</p>
-        
-    </div>
-
-    <footer style="position: fixed; bottom: 0; width: 100%; padding: 10px 0; background-color: rgba(0,0,0,0.2); font-size: 0.9em;">
-        © 2025 - Mi Proyecto Django
-    </footer>
-{% endblock %}
-
-
-
-</body>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Freelancer - Start Bootstrap Theme</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="{% static 'assets/favicon.ico' %}" />
+        <script src="{% static 'js/scripts.js' %}"></script>
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="{% url 'inicio'%}">Home</a>
+                <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'cursos'%}">Cursos</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'crear-curso'%}">Crear Cursos</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead bg-primary text-white text-center">
+            <div class="container d-flex align-items-center flex-column">
+                <!-- Masthead Avatar Image-->
+               
+                <!-- Masthead Heading-->
+                <h1 class="masthead-heading text-uppercase mb-0">Start Bootstrap</h1>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- Masthead Subheading-->
+               <main class="container mt-5">
+                {% block content %}
+                {% endblock %}
+                </main>
+    </body>
 </html>
